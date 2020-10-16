@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <group android:id="@+id/group1"
+        >
+ <item
+     android:id="@+id/item_home"
+     android:checkable="true"
+     android:icon="@drawable/home_ic"
+     android:title="Home"
+
+     />
+
+    <item
+        android:id="@+id/item_control"
+        android:checkable="true"
+        android:icon="@drawable/control_ic"
+        android:title="Control panel"/>
+
+    <item
+        android:id="@+id/item_contact"
+        android:checkable="true"
+        android:icon="@drawable/contact_ic"
+        android:title="Contact "/>
+
+
+        <item
+            android:id="@+id/item_about"
+            android:checkable="true"
+            android:icon="@drawable/about_ic"
+            android:title="About us"/>
+    </group>
+
+
+</menu>

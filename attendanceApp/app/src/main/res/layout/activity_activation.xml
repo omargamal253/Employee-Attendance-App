@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activationActivity"
+    android:background="@color/blueColor"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/active_bg"
+        android:elevation="20dp"
+        android:layout_centerVertical="true"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activation"
+            android:textStyle="bold"
+            android:textColor="@color/blueColor"
+            android:textSize="25dp"
+            android:layout_marginBottom="15dp"
+            />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EmployeeNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/HintText"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EmployeeName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Employee name"
+                android:inputType="text"
+                android:paddingStart="10dp"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EmployeeCodeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/HintText"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EmployeeCode"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Employee code"
+                android:inputType="number"
+                android:paddingStart="10dp"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text=" Activate "
+            android:background="@drawable/btn1_background"
+            android:textColor="#fff"
+
+            android:drawableStart="@drawable/log_ic"
+            android:paddingStart="50dp"
+            android:drawablePadding="-60dp"
+
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+android:layout_marginBottom="20dp"
+android:onClick="ActiveEmployee"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

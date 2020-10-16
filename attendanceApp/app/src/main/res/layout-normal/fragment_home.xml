@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment"
+    android:background="#fff">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:minHeight="200dp">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/Image"
+                android:visibility="gone"
+
+                />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/CamRelative"
+                >
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_add_a_photo_24"
+                    android:id="@+id/cam"
+                    android:layout_centerHorizontal="true"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TAB HERE TO SCAN "
+                    android:layout_below="@+id/cam"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:id="@+id/TimeRelative"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/time_background"
+            >
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/DateText"
+                android:format12Hour="dd-MM-yyyy"
+
+                />
+
+
+            <TextClock
+                android:id="@+id/textClock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh:mm:ss a"
+                android:background="@drawable/time2_background"
+                android:textAlignment="center"
+                android:layout_below="@+id/DateText"
+                android:layout_centerHorizontal="true"
+                android:textColor="#fff"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text=" Check In "
+            android:background="@drawable/btn1_background"
+            android:textColor="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/log_ic"
+            android:paddingStart="50dp"
+            android:drawablePadding="-60dp"
+
+            android:id="@+id/CheckInBtn"
+
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text=" Break Out "
+            android:background="@drawable/btn3_background"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/log_ic2"
+            android:paddingStart="50dp"
+            android:drawablePadding="-60dp"
+            android:id="@+id/BreakOutBtn"
+
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text=" Break In "
+            android:background="@drawable/btn2_background"
+            android:textColor="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/log_ic"
+            android:paddingStart="50dp"
+            android:drawablePadding="-60dp"
+            android:id="@+id/BreakInBtn"
+
+
+            />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text=" Check Out "
+            android:background="@drawable/btn4_background"
+            android:textColor="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/log_ic"
+            android:paddingStart="50dp"
+            android:drawablePadding="-60dp"
+            android:id="@+id/CheckOutBtn"
+
+
+            />
+
+
+
+    </LinearLayout>
+
+</FrameLayout>
