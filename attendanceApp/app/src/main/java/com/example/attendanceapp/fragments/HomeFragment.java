@@ -272,10 +272,10 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
     protected  void SendAttendance(int status){
 
         if(bitmap==null){
-            Toast.makeText(c, "Tab to select image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, "انقر لالتقاط صورة أولا", Toast.LENGTH_SHORT).show();
 
         }else if (locationModel.locationMutableLiveData.getValue()==null) {
-            Toast.makeText(c, "Try again.. ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, "حاول مرة أخرى.. ", Toast.LENGTH_SHORT).show();
             if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
                     ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                 locationModel.GetLocation(getActivity());
@@ -322,14 +322,14 @@ String Base64 = "data:image/png;base64,"+ImageToString();
                         CamRelative.setVisibility(View.VISIBLE);
 
 
-                    }else      Toast.makeText(c, "Try Again later..", Toast.LENGTH_LONG).show();
+                    }else      Toast.makeText(c, "حاول مرة أخرى في وقت لاحق..", Toast.LENGTH_LONG).show();
 
                 }
 
                 @Override
                 public void onFailure(Call<CheckResponse> call, Throwable t) {
                     pd.dismiss();
-                    Toast.makeText(c, "check your internet connection", Toast.LENGTH_LONG).show();
+                    Toast.makeText(c, "تحقق من اتصالك بالانترنت", Toast.LENGTH_LONG).show();
                     Log.d("CurrentUser", t.getMessage());
 
                 }

@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">Attendance App</string>
+    <string name="app_name">نظام حضور</string>
     <string name="open" />
     <string name="close" />
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">الرئيسية</string>
+    <string name="about_us">من نحن</string>
+    <string name="control_panel">لوحة التحكم</string>
+    <string name="contact_us">تواصل معنا</string>
 </resources>

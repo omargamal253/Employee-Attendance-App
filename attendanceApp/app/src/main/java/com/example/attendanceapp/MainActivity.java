@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.attendanceapp.fragments.AboutFragment;
+import com.example.attendanceapp.fragments.ContactFragment;
 import com.example.attendanceapp.fragments.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -44,7 +45,7 @@ Toolbar toolbar ;
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
         SetDrawerHeader();
-        NavigateTo("Home");
+        NavigateTo(getString(R.string.home));
 
 
     }
@@ -55,24 +56,15 @@ Toolbar toolbar ;
     int  itemId = item.getItemId();
 
     if (itemId == R.id.item_home){
+   NavigateTo(getString(R.string.home));
+    }
+    else if(itemId== R.id.item_about) {
+        NavigateTo(getString(R.string.about_us));
+    }
+    else if(itemId== R.id.item_contact) {
+        NavigateTo(getString(R.string.contact_us));
+    }
 
-      /*  HomeFragment homeFragment = new HomeFragment();
-      //   FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, homeFragment);
-        fragmentTransaction.commit();
-        toolbar.setTitle("Home");*/
-        NavigateTo("Home");
-    }
-     if(itemId== R.id.item_about) {
-       /* AboutFragment aboutFragment = new AboutFragment();
-      //   FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, aboutFragment);
-         fragmentTransaction.commit();
-        toolbar.setTitle("About us");*/
-        NavigateTo("About us");
-    }
         CloseDrawer();
         return true;
     }
@@ -81,11 +73,14 @@ Toolbar toolbar ;
     }
     public void NavigateTo(String page){
         Fragment fragment;
-        if(page.equals("Home")){
+        if(page.equals(getString(R.string.home))){
             fragment = new HomeFragment();
-        }else if (page.equals("About us")){
+        }else if (page.equals(getString(R.string.about_us))){
             fragment = new AboutFragment();
-        }else fragment = new HomeFragment();
+        }else if (page.equals(getString(R.string.contact_us))){
+            fragment = new ContactFragment();
+        }
+        else fragment = new HomeFragment();
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);

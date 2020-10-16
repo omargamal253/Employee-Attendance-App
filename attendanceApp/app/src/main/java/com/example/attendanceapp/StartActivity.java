@@ -27,7 +27,9 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         textView = findViewById(R.id.textView);
         androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-//androidId = "bmlkgkl@lk052sd";
+//androidId = "9f83789b6c8661df";
+      //  androidId = "9f53789b6c8661df";
+
         DataClient.getINSTANCE().CheckCode(androidId).enqueue(new Callback<CheckResponse>() {
             @Override
             public void onResponse(Call<CheckResponse> call, Response<CheckResponse> response) {
@@ -53,7 +55,7 @@ public class StartActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }else{
-                        Toast.makeText(getApplicationContext(),"check your internet connection",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"تحقق من اتصالك بالانترنت",Toast.LENGTH_LONG).show();
 
                     }
                 }
@@ -67,7 +69,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<CheckResponse> call, Throwable t) {
                 Log.d("CurrentUser",t.getMessage());
-                Toast.makeText(getApplicationContext(),"check your internet connection",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"تحقق من اتصالك بالانترنت",Toast.LENGTH_LONG).show();
 
 
             }

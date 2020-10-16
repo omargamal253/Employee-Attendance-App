@@ -8,25 +8,44 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class activationActivity extends AppCompatActivity {
 
     EditText EmployeeName,EmployeeCode;
+    Button ActiveBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activation);
         EmployeeName = findViewById(R.id.EmployeeName);
         EmployeeCode = findViewById(R.id.EmployeeCode);
+        ActiveBtn = findViewById(R.id.ActiveBtn);
 
+        ActiveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TextUtils.isEmpty(EmployeeName.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"اسم الموظف فارغ",Toast.LENGTH_LONG).show();
+
+                }else if(TextUtils.isEmpty(EmployeeCode.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"الكود الوظيفى فارغ",Toast.LENGTH_LONG).show();
+
+
+                }else{
+                    ActiveEmployee();
+                }
+            }
+        });
 
     }
 
 
-    public void ActiveEmployee(View view) {
+    public void ActiveEmployee() {
         Boolean Install = WhatsInstallOrNot("com.whatsapp");
 
         String androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -50,7 +69,7 @@ public class activationActivity extends AppCompatActivity {
         intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+20"+"01140426977"+"&text="+message));
         startActivity(intent);
         }else{
-            Toast.makeText(this,"WhatsApp not installed in your device",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"تطبيق واتس اب غير مثبت على هاتفك لارسال البيانات الخاص بك الينا",Toast.LENGTH_LONG).show();
 
         }
     }

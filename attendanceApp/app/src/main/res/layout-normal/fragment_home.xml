@@ -44,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TAB HERE TO SCAN "
+                    android:text="انقر لالتقاط صورة "
                     android:layout_below="@+id/cam"
                     />
             </RelativeLayout>
@@ -88,7 +88,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text=" Check In "
+            android:text=" تسجيل حضور "
             android:background="@drawable/btn1_background"
             android:textColor="#fff"
             android:layout_marginTop="20dp"
@@ -104,7 +104,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text=" Break Out "
+            android:text=" إذن خروج "
             android:background="@drawable/btn3_background"
             android:textColor="#000"
             android:layout_marginTop="20dp"
@@ -121,7 +121,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text=" Break In "
+            android:text=" إذن دخول "
             android:background="@drawable/btn2_background"
             android:textColor="#fff"
             android:layout_marginTop="20dp"
@@ -139,7 +139,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text=" Check Out "
+            android:text=" تسجيل إنصراف "
             android:background="@drawable/btn4_background"
             android:textColor="#fff"
             android:layout_marginTop="20dp"

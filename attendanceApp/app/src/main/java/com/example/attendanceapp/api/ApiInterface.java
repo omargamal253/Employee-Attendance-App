@@ -1,11 +1,14 @@
 package com.example.attendanceapp.api;
 
 import com.example.attendanceapp.api.model.CheckResponse;
+import com.example.attendanceapp.api.model.PageResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiInterface {
 
@@ -28,6 +31,17 @@ public interface ApiInterface {
 
             );
 
+    @FormUrlEncoded
+    @POST("attends/v3/api/contact")
+    public Call<CheckResponse> SetContact(
+            @Field("name") String name,
+            @Field("email") String email,
+            @Field("message") String message
+    );
 
+
+
+    @GET("attends/v3/api/page/{id}")
+    public Call<PageResponse> getPage(@Path("id") int id  );
 
 }

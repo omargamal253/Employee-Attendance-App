@@ -24,14 +24,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Activation"
+            android:text="تفعيل الموظف"
             android:textStyle="bold"
             android:textColor="@color/blueColor"
             android:textSize="25dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="25dp"
             />
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="عزيزي الموظف ادخل البيانات ثم اضعط تفعيل لأرسال البيانات الخاصه بك على الواتس اب الخاص بنا"
+
+           android:layout_marginBottom="2dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/EmployeeNameLayout"
@@ -45,9 +51,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="Employee name"
+                android:hint="اسم الموظف"
                 android:inputType="text"
-                android:paddingStart="10dp"
+                android:padding="10dp"
 
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -64,9 +70,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="Employee code"
+                android:hint="الكود الوظيفى"
                 android:inputType="number"
-                android:paddingStart="10dp"
+                android:padding="10dp"
 
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -74,7 +80,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text=" Activate "
+            android:text=" تفعيل "
             android:background="@drawable/btn1_background"
             android:textColor="#fff"
 
@@ -86,7 +92,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
 android:layout_marginBottom="20dp"
-android:onClick="ActiveEmployee"
+            android:textSize="19dp"
+            android:id="@+id/ActiveBtn"
             />
     </LinearLayout>
 

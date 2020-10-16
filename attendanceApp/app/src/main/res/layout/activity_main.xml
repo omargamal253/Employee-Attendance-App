@@ -28,7 +28,7 @@
             app:titleTextColor="#fff"
             android:layout_margin="8dp"
             android:scrollbarStyle="insideInset"
-            app:title="Home"
+            app:title="@string/home"
             />
 
 
