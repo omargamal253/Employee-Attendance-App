@@ -9,14 +9,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.attendanceapp.fragments.AboutFragment;
 import com.example.attendanceapp.fragments.ContactFragment;
+import com.example.attendanceapp.fragments.ControlFragment;
 import com.example.attendanceapp.fragments.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -25,6 +29,8 @@ Toolbar toolbar ;
     DrawerLayout drawerLayout ;
     NavigationView navigationView;
     public  FragmentTransaction fragmentTransaction ;
+    ProgressDialog pd_exit ;
+    View DialogView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +53,7 @@ Toolbar toolbar ;
         SetDrawerHeader();
         NavigateTo(getString(R.string.home));
 
-
+        DefineProgressExit();
     }
 
     @Override
@@ -64,6 +70,9 @@ Toolbar toolbar ;
     else if(itemId== R.id.item_contact) {
         NavigateTo(getString(R.string.contact_us));
     }
+    else if(itemId== R.id.item_control) {
+        NavigateTo(getString(R.string.control_panel));
+    }
 
         CloseDrawer();
         return true;
@@ -79,6 +88,8 @@ Toolbar toolbar ;
             fragment = new AboutFragment();
         }else if (page.equals(getString(R.string.contact_us))){
             fragment = new ContactFragment();
+        }else if (page.equals(getString(R.string.control_panel))){
+            fragment = new ControlFragment();
         }
         else fragment = new HomeFragment();
 
@@ -100,6 +111,52 @@ Toolbar toolbar ;
         EmployeeCode.setText(StartActivity.EmployeeData.jobId);
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(ControlFragment.webView!=null){
+                if (ControlFragment.webView.canGoBack()){
+            ControlFragment.webView.goBack();
+          }else{
+                    pd_exit.show();
+                    pd_exit.setContentView(DialogView);
+                    pd_exit.getWindow(). setBackgroundDrawableResource(R.color.transparent);
+                    pd_exit.setCancelable(false);
+                }
+        }else{
+
+         //   super.onBackPressed();
+            pd_exit.show();
+            pd_exit.setContentView(DialogView);
+            pd_exit.getWindow(). setBackgroundDrawableResource(R.color.transparent);
+            pd_exit.setCancelable(false);
+
+        }
+    }
+
+
+    public void DefineProgressExit(){
+        LayoutInflater layoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        DialogView  =layoutInflater.inflate(R.layout.progrss_exit,null);
+        pd_exit = new ProgressDialog(this);
+
+        TextView BackTxt=DialogView.findViewById(R.id.Back_Txt);
+        BackTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pd_exit.dismiss();
+            }
+        });
+        TextView LoginTxt=DialogView.findViewById(R.id.exit_text);
+        LoginTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pd_exit.dismiss();
+                finishAffinity();
+
+            }
+        });
     }
 
 }

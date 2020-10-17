@@ -22,6 +22,7 @@
         android:text="مرحبا بكم يسعدنا تواصلكم معنا عبر ارسال لنا أى استفسار او ملاحظه خاصه بكم"
 android:layout_marginBottom="5dp"
        android:textSize="17dp"
+        android:textColor="@color/blueColor"
         />
 
     <com.google.android.material.textfield.TextInputLayout

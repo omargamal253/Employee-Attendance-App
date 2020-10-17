@@ -99,6 +99,7 @@
             android:drawablePadding="-60dp"
 
             android:id="@+id/CheckInBtn"
+            android:textSize="16dp"
 
             />
         <Button
@@ -114,6 +115,7 @@
             android:paddingStart="50dp"
             android:drawablePadding="-60dp"
             android:id="@+id/BreakOutBtn"
+            android:textSize="16dp"
 
 
             />
@@ -131,6 +133,7 @@
             android:paddingStart="50dp"
             android:drawablePadding="-60dp"
             android:id="@+id/BreakInBtn"
+            android:textSize="16dp"
 
 
             />
@@ -149,6 +152,7 @@
             android:paddingStart="50dp"
             android:drawablePadding="-60dp"
             android:id="@+id/CheckOutBtn"
+            android:textSize="16dp"
 
 
             />
