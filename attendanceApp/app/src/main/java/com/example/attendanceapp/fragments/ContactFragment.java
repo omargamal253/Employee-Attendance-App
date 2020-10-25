@@ -41,14 +41,14 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-      final  View view= inflater.inflate(R.layout.fragment_contact, container, false);
-         c = getActivity();
+        final  View view= inflater.inflate(R.layout.fragment_contact, container, false);
+        c = getActivity();
 
-         EmployeeName =view.findViewById(R.id.EmployeeName);
-         EmployeeEmail = view.findViewById(R.id.EmployeeEmail);
-         Message = view.findViewById(R.id.Message);
-         Send = view.findViewById(R.id.Send);
-         pd =new ProgressDialog(c);
+        EmployeeName =view.findViewById(R.id.EmployeeName);
+        EmployeeEmail = view.findViewById(R.id.EmployeeEmail);
+        Message = view.findViewById(R.id.Message);
+        Send = view.findViewById(R.id.Send);
+        pd =new ProgressDialog(c);
 
         Send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,9 +84,9 @@ public class ContactFragment extends Fragment {
             public void onResponse(Call<CheckResponse> call, Response<CheckResponse> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(c, response.body().message, Toast.LENGTH_LONG).show();
-                EmployeeEmail.setText("");
-                EmployeeName.setText("");
-                Message.setText("");
+                    EmployeeEmail.setText("");
+                    EmployeeName.setText("");
+                    Message.setText("");
                     Log.d("CurrentUser",response.body().message);
                 }else  Toast.makeText(c, "تحقق من اتصالك بالانترنت.", Toast.LENGTH_LONG).show();
                 pd.dismiss();
@@ -96,7 +96,7 @@ public class ContactFragment extends Fragment {
             public void onFailure(Call<CheckResponse> call, Throwable t) {
                 Toast.makeText(c, "تحقق من اتصالك بالانترنت", Toast.LENGTH_LONG).show();
                 Log.d("CurrentUser",t.getMessage());
-            pd.dismiss();
+                pd.dismiss();
             }
         });
     }

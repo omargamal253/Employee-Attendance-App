@@ -48,6 +48,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/blueColor"
                 android:id="@+id/Back_Txt"
+                android:layout_toEndOf="@+id/exit_text"
+
                 />
 
 
@@ -58,7 +60,6 @@
                 android:textSize="15dp"
                 android:textAlignment="center"
                 android:textColor="@color/blueColor"
-                android:layout_toEndOf="@+id/Back_Txt"
                 android:id="@+id/exit_text"
 
                 />

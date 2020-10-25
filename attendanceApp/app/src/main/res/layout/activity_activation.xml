@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="عزيزي الموظف ادخل البيانات ثم اضعط تفعيل لأرسال البيانات الخاصه بك على الواتس اب الخاص بنا"
 
-           android:layout_marginBottom="2dp" />
+            android:layout_marginBottom="2dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/EmployeeNameLayout"
@@ -91,7 +91,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-android:layout_marginBottom="20dp"
+            android:layout_marginBottom="20dp"
             android:textSize="19dp"
             android:id="@+id/ActiveBtn"
             />

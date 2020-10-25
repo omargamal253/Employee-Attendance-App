@@ -26,16 +26,18 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         textView = findViewById(R.id.textView);
-      //  androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-androidId = "9f83789b6c8661df";
-      //  androidId = "9f53789b6c8661df";
+        androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+//androidId = "9f83789b6c8661df";
+    //    androidId = "bmlkgkl@lk052sd"; //block employee
+      //  androidId = "9f83789b6888661df"; //  new Employee
+
 
         DataClient.getINSTANCE().CheckCode(androidId).enqueue(new Callback<CheckResponse>() {
             @Override
             public void onResponse(Call<CheckResponse> call, Response<CheckResponse> response) {
                 if(response.body()!=null){
                     Log.d("CurrentUser",response.body().message);
-                    Toast.makeText(getApplicationContext(),response.body().message,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StartActivity.this,response.body().message,Toast.LENGTH_SHORT).show();
                     String status_code=" ",block=" ";
                     if(response.body().data!=null){
                      status_code =response.body().data.statusCode;

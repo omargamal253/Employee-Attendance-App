@@ -2,6 +2,7 @@ package com.example.attendanceapp.api;
 
 import com.example.attendanceapp.api.model.CheckResponse;
 import com.example.attendanceapp.api.model.PageResponse;
+import com.example.attendanceapp.api.model.SettingResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -60,5 +61,9 @@ public class DataClient {
     public Call<PageResponse> getPage( int id  ){
         return  apiInterface.getPage(id);
     }
+    public Call<SettingResponse> getSetting(){
+        return  apiInterface.getSetting();
+    }
+
 
 }

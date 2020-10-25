@@ -1,6 +1,8 @@
 package com.example.attendanceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -9,15 +11,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.attendanceapp.api.model.SettingResponse;
+import com.example.attendanceapp.viewmodel.SettingViewModel;
+
 public class activationActivity extends AppCompatActivity {
 
     EditText EmployeeName,EmployeeCode;
     Button ActiveBtn;
+    SettingViewModel settingViewModel;
+String Phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +34,24 @@ public class activationActivity extends AppCompatActivity {
         EmployeeCode = findViewById(R.id.EmployeeCode);
         ActiveBtn = findViewById(R.id.ActiveBtn);
 
-        ActiveBtn.setOnClickListener(new View.OnClickListener() {
+
+        settingViewModel = ViewModelProviders.of(this).get(SettingViewModel.class);
+        if(settingViewModel.SettingData.getValue()!=null) {
+            Phone= settingViewModel.SettingData.getValue().data.sitePhone;
+
+        }else {
+            settingViewModel.getSetting();
+            settingViewModel.SettingData.observe(this, new Observer<SettingResponse>() {
+                @Override
+                public void onChanged(SettingResponse settingResponse) {
+
+                    Phone= settingViewModel.SettingData.getValue().data.sitePhone;
+
+                    Log.d("CurrentUser", "settingViewModel.SettingData from observer");
+                }
+            });
+        }
+            ActiveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(TextUtils.isEmpty(EmployeeName.getText().toString())){
@@ -66,8 +91,10 @@ public class activationActivity extends AppCompatActivity {
                 ;
         Intent intent = new Intent(Intent.ACTION_VIEW);
         if(Install){
-        intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+20"+"01140426977"+"&text="+message));
-        startActivity(intent);
+       // intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+20"+"+01115394624"+"&text="+message));
+        intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+Phone+"&text="+message));
+
+            startActivity(intent);
         }else{
             Toast.makeText(this,"تطبيق واتس اب غير مثبت على هاتفك لارسال البيانات الخاص بك الينا",Toast.LENGTH_LONG).show();
 

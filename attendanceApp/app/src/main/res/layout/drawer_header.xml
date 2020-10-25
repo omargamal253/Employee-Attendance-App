@@ -5,100 +5,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/blueColor"
     tools:context=".MainActivity"
-
+    android:paddingStart="15dp"
     >
 
     <ImageView
         android:layout_width="160dp"
         android:layout_height="50dp"
         android:src="@drawable/injaz_cart"
-android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="40dp"
         android:id="@+id/image"
         />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Employee:"
+            android:maxWidth="200dp"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:id="@+id/NameText"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="omar gamal"
+            android:maxWidth="200dp"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:layout_toEndOf="@+id/NameText"
+            android:id="@+id/EmployeeName"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:layout_marginStart="1dp"
+
+
+            />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Employee name"
+            android:text="Job code:"
+            android:maxWidth="200dp"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
             android:textColor="#fff"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textStyle="bold"
-            android:layout_marginStart="10dp"
-
-            android:id="@+id/user_username"
-            android:layout_marginTop="5dp"
- android:textAlignment="center"
-            android:layout_below="@+id/image"
-            android:visibility="gone"
+            android:layout_below="@+id/NameText"
+            android:id="@+id/CodeText"
             />
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image"
-        android:layout_marginStart="20dp"
->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Employee:"
-        android:maxWidth="200dp"
-        android:layout_margin="5dp"
-        android:textAlignment="center"
-        android:id="@+id/NameText"
-        android:textColor="#fff"
-        android:textSize="15dp"
-        android:textStyle="bold"
-
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="omar gamal"
-        android:maxWidth="200dp"
-        android:layout_margin="5dp"
-        android:textAlignment="center"
-        android:layout_toEndOf="@+id/NameText"
-        android:id="@+id/EmployeeName"
-        android:textColor="#fff"
-        android:textSize="15dp"
-        android:layout_marginStart="1dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123456"
+            android:maxWidth="200dp"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:layout_below="@+id/NameText"
+            android:layout_toEndOf="@+id/CodeText"
+            android:id="@+id/EmployeeCode"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:layout_marginStart="3dp"
 
 
-        />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Code:"
-        android:maxWidth="200dp"
-        android:layout_margin="5dp"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/NameText"
-        android:id="@+id/CodeText"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="123456"
-        android:maxWidth="200dp"
-        android:layout_margin="5dp"
-        android:textAlignment="center"
-        android:layout_below="@+id/NameText"
-        android:layout_toEndOf="@+id/CodeText"
-        android:id="@+id/EmployeeCode"
-        android:textColor="#fff"
-        android:textSize="15dp"
-        android:layout_marginStart="3dp"
-
-
-        />
+            />
 
 
 

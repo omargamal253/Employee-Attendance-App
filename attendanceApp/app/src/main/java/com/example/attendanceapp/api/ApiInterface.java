@@ -2,6 +2,7 @@ package com.example.attendanceapp.api;
 
 import com.example.attendanceapp.api.model.CheckResponse;
 import com.example.attendanceapp.api.model.PageResponse;
+import com.example.attendanceapp.api.model.SettingResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -43,5 +44,10 @@ public interface ApiInterface {
 
     @GET("attends/v3/api/page/{id}")
     public Call<PageResponse> getPage(@Path("id") int id  );
+
+    @GET("attends/v3/api/settings")
+    public Call<SettingResponse> getSetting();
+
+
 
 }

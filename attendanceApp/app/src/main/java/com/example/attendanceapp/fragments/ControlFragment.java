@@ -5,7 +5,10 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +20,15 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.example.attendanceapp.R;
+import com.example.attendanceapp.api.model.SettingResponse;
+import com.example.attendanceapp.viewmodel.SettingViewModel;
 
 public class ControlFragment extends Fragment  {
-FragmentActivity c ;
+    FragmentActivity c ;
     public static WebView webView ;
     ProgressDialog pd;
+    SettingViewModel settingViewModel;
+
     public ControlFragment() {
         // Required empty public constructor
     }
@@ -38,7 +45,7 @@ FragmentActivity c ;
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_control, container, false);
         c=  getActivity();
-pd = new ProgressDialog(c);
+        pd = new ProgressDialog(c);
         pd.show();
         pd.setContentView(R.layout.progress_dialog);
         pd.getWindow().setBackgroundDrawableResource(R.color.transparent);
@@ -76,8 +83,24 @@ pd = new ProgressDialog(c);
         );
 
 
-            webView.loadUrl("https://injazcart.com/attends/v3");
-      //  webView.loadUrl("https://www.google.com");
+        settingViewModel = ViewModelProviders.of(this).get(SettingViewModel.class);
+        if(settingViewModel.SettingData.getValue()!=null){
+            webView.loadUrl(settingViewModel.SettingData.getValue().data.webviewLink);
+            Log.d("CurrentUser","settingViewModel.SettingData != null");
+
+        }else {
+            settingViewModel.getSetting();
+
+            settingViewModel.SettingData.observe(this, new Observer<SettingResponse>() {
+                @Override
+                public void onChanged(SettingResponse settingResponse) {
+                    webView.loadUrl(settingViewModel.SettingData.getValue().data.webviewLink);
+                    Log.d("CurrentUser", "settingViewModel.SettingData from observer");
+                }
+            });
+        }
+        //    webView.loadUrl("https://injazcart.com/attends/v3");
+        //  webView.loadUrl("https://www.google.com");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
