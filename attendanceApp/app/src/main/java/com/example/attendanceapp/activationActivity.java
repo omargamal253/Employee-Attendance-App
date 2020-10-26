@@ -75,13 +75,6 @@ String Phone;
 
         String androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
-       /* String s = "";
-        s += "\n androidId:     " + androidId;
-        //   s += "\n OS Version: " + System.getProperty("os.version") + "(" + android.os.Build.VERSION.INCREMENTAL + ")";
-        s += "\n Device name:     " + Build.BRAND+" "+android.os.Build.DEVICE;
-        s += "\n Android version:     " + android.os.Build.VERSION.RELEASE ;*/
-
-
         String   message = "Employee name : "+EmployeeName.getText().toString()+"\n"+
                            "Employee code : "+EmployeeCode.getText().toString()+"\n"+
                            "AndroidId:     " + androidId+"\n"+
@@ -93,6 +86,7 @@ String Phone;
         if(Install){
        // intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+20"+"+01115394624"+"&text="+message));
         intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+Phone+"&text="+message));
+         //   Toast.makeText(this,Phone,Toast.LENGTH_LONG).show();
 
             startActivity(intent);
         }else{

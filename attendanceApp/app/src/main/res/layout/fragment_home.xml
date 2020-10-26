@@ -6,6 +6,13 @@
     tools:context=".fragments.HomeFragment"
     android:background="#fff">
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+    android:layout_height="match_parent" >
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,6 +77,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/time_background"
             >
+
           <TextClock
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,8 +116,8 @@
             android:background="@drawable/btn1_background"
             android:textColor="#fff"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:drawableStart="@drawable/log_ic"
             android:paddingStart="50dp"
             android:drawablePadding="-60dp"
@@ -125,8 +133,8 @@
             android:background="@drawable/btn3_background"
             android:textColor="#000"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:drawableStart="@drawable/log_ic2"
             android:paddingStart="50dp"
             android:drawablePadding="-60dp"
@@ -143,8 +151,8 @@
             android:background="@drawable/btn2_background"
             android:textColor="#fff"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:drawableStart="@drawable/log_ic"
             android:paddingStart="50dp"
             android:drawablePadding="-60dp"
@@ -162,8 +170,8 @@
             android:background="@drawable/btn4_background"
             android:textColor="#fff"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:drawableStart="@drawable/log_ic"
             android:paddingStart="50dp"
             android:drawablePadding="-60dp"
@@ -176,5 +184,6 @@
 
 
     </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

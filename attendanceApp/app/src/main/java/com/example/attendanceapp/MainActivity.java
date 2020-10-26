@@ -54,6 +54,7 @@ Toolbar toolbar ;
         NavigateTo(getString(R.string.home));
 
         DefineProgressExit();
+
     }
 
     @Override

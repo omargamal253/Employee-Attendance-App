@@ -110,12 +110,7 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
         //  DateText.setText(textClock.getText());2
         askLocationPermissions();
         locationModel = ViewModelProviders.of(this).get(LocationModel.class);
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-         //   locationModel.GetLocation(getActivity());
 
-          //  GetCurrentLocation(c);
-        }
      //   DisplayLocation();
         pd = new ProgressDialog(c);
 
@@ -152,7 +147,6 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
         CheckOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //   SendAttendance(4);
                 displayProgress();
                 AttendStatue = 4 ;
                 GetCurrentLocation(c);
@@ -160,7 +154,6 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
         });
 
         DefineProgressAttend();
-
 
         return view;
     }
@@ -172,10 +165,8 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
 
         Message = DialogView.findViewById(R.id.message);
         EmployeeName = DialogView.findViewById(R.id.EmployeeName);
-        //EmployeeName.setText("Omar Gamal");
         EmployeeName.setText(StartActivity.EmployeeData.name);
         EmployeeCode = DialogView.findViewById(R.id.EmployeeCode);
-        //EmployeeCode.setText("156");
         EmployeeCode.setText(StartActivity.EmployeeData.jobId);
 
         Time = DialogView.findViewById(R.id.Time);
@@ -283,14 +274,6 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
 
         return Base64.encodeToString(bytes,Base64.DEFAULT);
     }
-   /* public void DisplayLocation(){
-        locationModel.locationMutableLiveData.observe(this, new Observer<Location>() {
-            @Override
-            public void onChanged(Location location) {
-                Log.d("CurrentLocation",String.valueOf(location.getLatitude()) + "  "+String.valueOf(location.getLongitude()));
-            }
-        });
-    }*/
 
     protected  void SendAttendance(int status){
 

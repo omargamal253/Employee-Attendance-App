@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ContactFragment"
+    android:background="#eee">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="مرحبا بكم يسعدنا تواصلكم معنا عبر ارسال لنا أى استفسار او ملاحظه خاصه بكم"
+            android:layout_marginBottom="15dp"
+            android:textSize="20dp"
+            android:textColor="#000"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EmployeeNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/HintText"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EmployeeName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="الاسم"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textSize="18dp"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EmployeeEmailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/HintText"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EmployeeEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="البريد الإلكتروني"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textSize="18dp"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/MessageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/HintText"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Message"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="نص الرسالة"
+                android:inputType="text"
+                android:padding="15dp"
+                android:gravity="start"
+                android:textSize="18dp"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text=" إرسال "
+            android:background="@drawable/btn1_background"
+            android:textColor="#fff"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:drawableStart="@drawable/log_ic"
+            android:paddingStart="50dp"
+            android:drawablePadding="-60dp"
+            android:id="@+id/Send"
+            android:textSize="20dp"
+
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

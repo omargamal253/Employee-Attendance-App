@@ -99,8 +99,6 @@ public class ControlFragment extends Fragment  {
                 }
             });
         }
-        //    webView.loadUrl("https://injazcart.com/attends/v3");
-        //  webView.loadUrl("https://www.google.com");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
