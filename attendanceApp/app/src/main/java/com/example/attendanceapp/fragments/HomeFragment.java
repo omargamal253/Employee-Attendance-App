@@ -47,6 +47,7 @@ import com.example.attendanceapp.api.DataClient;
 import com.example.attendanceapp.api.model.CheckResponse;
 import com.example.attendanceapp.location.SingleShotLocationProvider;
 import com.example.attendanceapp.viewmodel.LocationModel;
+import com.example.attendanceapp.voice.MediaVoice;
 
 import java.io.ByteArrayOutputStream;
 import java.time.LocalDateTime;
@@ -76,6 +77,7 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
     public static int AttendStatue = 1;
     SingleShotLocationProvider.GPSCoordinates location;
 
+MediaVoice mediaVoice;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -154,6 +156,7 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
         });
 
         DefineProgressAttend();
+         mediaVoice= new MediaVoice(c);
 
         return view;
     }
@@ -292,11 +295,11 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
         String Base64 = "data:image/png;base64,"+ImageToString();
         //    String Base64=  "data:image/png;base64,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";
 
-            Log.d("CurrentUser",    StartActivity.EmployeeData.jobId);
+         /*   Log.d("CurrentUser",    StartActivity.EmployeeData.jobId);
             Log.d("CurrentUser",   String.valueOf(location.latitude));
             Log.d("CurrentUser",    String.valueOf(location.longitude));
             Log.d("CurrentUser",    Base64 );
-            Log.d("CurrentUser",   String.valueOf( status) );
+            Log.d("CurrentUser",   String.valueOf( status) );*/
 
 
             DataClient.getINSTANCE().SendAttendance(Integer.parseInt(StartActivity.EmployeeData.jobId),
@@ -311,6 +314,8 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
 
                       //  Toast.makeText(c, response.body().message, Toast.LENGTH_SHORT).show();
 
+                        if(response.body().status) mediaVoice.PlayVoice(1);
+                        else mediaVoice.PlayVoice(2);
                         pd2.show();
                         pd2.setContentView(DialogView);
                         pd2.getWindow().setBackgroundDrawableResource(R.color.transparent);
@@ -345,7 +350,7 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
 
 
     public void GetCurrentLocation(Context context) {
-        SingleShotLocationProvider.requestSingleUpdate(context,
+  SingleShotLocationProvider.requestSingleUpdate(context,
                 new SingleShotLocationProvider.LocationCallback() {
 
                     @Override public void onNewLocationAvailable(SingleShotLocationProvider.GPSCoordinates NewLocation) {
@@ -355,21 +360,35 @@ Button CheckInBtn,BreakOutBtn,BreakInBtn,CheckOutBtn;
 
                     }
                 });
+/*      {
+
+      }else pd.dismiss();*/
+
+
     }
 
     public void displayProgress(){
-        if(bitmap!=null) {
+        LocationManager locationManager = (LocationManager) c.getSystemService(Context.LOCATION_SERVICE);
+        boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if(!isGPSEnabled){
+
+        } else if(bitmap==null) {
+            Toast.makeText(c, "انقر لالتقاط صورة أولا", Toast.LENGTH_SHORT).show();
+
+        }
+        else {
             pd.show();
             pd.setContentView(R.layout.progress_dialog);
             pd.getWindow().setBackgroundDrawableResource(R.color.transparent);
             pd.setCancelable(false);
-        }else {
-            Toast.makeText(c, "انقر لالتقاط صورة أولا", Toast.LENGTH_SHORT).show();
         }
     }
 
-
-
+    @Override
+    public void onStop() {
+        super.onStop();
+      if(mediaVoice!=null)  mediaVoice.StopPlayer();
+    }
 }
 
 
