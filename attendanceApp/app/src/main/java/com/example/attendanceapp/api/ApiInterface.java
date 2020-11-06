@@ -16,13 +16,13 @@ public interface ApiInterface {
 
 
     @FormUrlEncoded
-    @POST("attends/v3/api/checkCode")
+    @POST("api/checkCode")
     public Call<CheckResponse> CheckCode(
             @Field("code") String code
     );
 
     @FormUrlEncoded
-    @POST("attends/v3/api/attends")
+    @POST("api/attends")
     public Call<CheckResponse> SendAttendance(
             @Field("job_id") int job_id,
             @Field("lat") String lat_,
@@ -33,7 +33,7 @@ public interface ApiInterface {
             );
 
     @FormUrlEncoded
-    @POST("attends/v3/api/contact")
+    @POST("api/contact")
     public Call<CheckResponse> SetContact(
             @Field("name") String name,
             @Field("email") String email,
@@ -42,10 +42,10 @@ public interface ApiInterface {
 
 
 
-    @GET("attends/v3/api/page/{id}")
+    @GET("api/page/{id}")
     public Call<PageResponse> getPage(@Path("id") int id  );
 
-    @GET("attends/v3/api/settings")
+    @GET("api/settings")
     public Call<SettingResponse> getSetting();
 
 

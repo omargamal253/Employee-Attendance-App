@@ -1,5 +1,6 @@
 package com.example.attendanceapp.api;
 
+import com.example.attendanceapp.AdminPanel;
 import com.example.attendanceapp.api.model.CheckResponse;
 import com.example.attendanceapp.api.model.PageResponse;
 import com.example.attendanceapp.api.model.SettingResponse;
@@ -14,7 +15,7 @@ import retrofit2.http.Path;
 
 public class DataClient {
 
-    private static final String BASE_URL = "https://injazcart.com/";
+    private static final String BASE_URL = AdminPanel.getHostUrl();
 
     private ApiInterface apiInterface;
     private static DataClient INSTANCE;

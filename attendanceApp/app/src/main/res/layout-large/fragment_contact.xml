@@ -6,6 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ContactFragment"
     android:background="#eee">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent" >
+
 
 
     <LinearLayout
@@ -105,5 +112,5 @@
             />
 
     </LinearLayout>
-
+    </ScrollView>
 </FrameLayout>
