@@ -26,8 +26,8 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         textView = findViewById(R.id.textView);
-        androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-      //  androidId = "9f83789b6c8661df";
+       // androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        androidId = "9f83789b6c8661df";
       //    androidId = "bmlkgkl@lk052sd"; //block employee
      //   androidId = "9f83789b6888661df"; //  new Employee
 
