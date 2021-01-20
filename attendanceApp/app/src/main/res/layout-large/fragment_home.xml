@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment"
+    android:background="#fff">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:minHeight="300dp">
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="330dp"
+                    android:id="@+id/Image"
+                    android:visibility="gone"
+
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/CamRelative"
+                    android:layout_centerInParent="true"
+                    >
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_baseline_add_a_photo_24"
+                        android:id="@+id/cam"
+                        android:layout_centerHorizontal="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="انقر لالتقاط صورة "
+                        android:layout_below="@+id/cam"
+                        android:textSize="14dp"
+                        />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/again_photo"
+                    android:layout_alignEnd="@+id/Image"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ImgAgain"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:id="@+id/TimeRelative"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/time_background"
+                >
+
+                <TextClock
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/DateText"
+                    android:format12Hour="dd-MM-yyyy"
+                    android:format24Hour="dd-MM-yyyy"
+                    android:textSize="16dp"
+
+                    />
+
+
+                <TextClock
+                    android:id="@+id/textClock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:format12Hour="hh:mm:ss a"
+                    android:format24Hour="hh:mm:ss a"
+                    android:background="@drawable/time2_background"
+                    android:textAlignment="center"
+                    android:layout_below="@+id/DateText"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#fff"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+
+                    />
+
+            </RelativeLayout>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:text=" تسجيل حضور "
+                android:background="@drawable/btn1_background"
+                android:textColor="#fff"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:textSize="18dp"
+
+                android:drawableStart="@drawable/log_ic"
+                android:paddingStart="50dp"
+                android:drawablePadding="-60dp"
+
+                android:id="@+id/CheckInBtn"
+
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:text=" إذن خروج "
+                android:background="@drawable/btn3_background"
+                android:textColor="#000"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:textSize="18dp"
+
+                android:drawableStart="@drawable/log_ic2"
+                android:paddingStart="50dp"
+                android:drawablePadding="-60dp"
+                android:id="@+id/BreakOutBtn"
+
+
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:text=" إذن دخول "
+                android:background="@drawable/btn2_background"
+                android:textColor="#fff"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:textSize="18dp"
+
+                android:drawableStart="@drawable/log_ic"
+                android:paddingStart="50dp"
+                android:drawablePadding="-60dp"
+                android:id="@+id/BreakInBtn"
+
+
+                />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:text=" تسجيل إنصراف "
+                android:background="@drawable/btn4_background"
+                android:textColor="#fff"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:textSize="18dp"
+
+                android:drawableStart="@drawable/log_ic"
+                android:paddingStart="50dp"
+                android:drawablePadding="-60dp"
+                android:id="@+id/CheckOutBtn"
+
+
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
