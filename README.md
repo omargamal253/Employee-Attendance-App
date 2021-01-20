@@ -1,6 +1,12 @@
-#Easy-Attendance-App
-Employee attendance app is a simple uncluttered application to track your employees manually. It chiefly convenient for a small team of workers as the manager has to operate with the app alone.
-It’s his responsibility to add new members, create a schedule for them, and monitor their attendance. The app just simplifies this process providing your final report.
+<h1 align="center">👋 Easy Attendance App</h1>
+<h3 align="center">attendance app is a simple uncluttered application to track your employees manually. Employee do check in or check out  based on his current location and photo that has been taken.
+App using back end services and calling apis.</h3>
+
+<h3 align="left" > 🌱 App link on play store : [https://play.google.com/store/apps/details?id=com.injazcart.attendanceapp&fbclid=IwAR1BxWO7EF2YaMzuhUUQ70D5HGtsm4qIEsqSjGdZG0_WFkUMqkLGix96Nus]
+</h3>
+
+<h3 align="left" >💻 The application is developed for Injaz cart company.
+Their website : [https://injazcart.com/attends/]</p>
 
 
 ![1](https://user-images.githubusercontent.com/48572908/105253856-f9d38180-5b88-11eb-85ea-e007dee427cf.png)
